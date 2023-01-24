@@ -10,9 +10,10 @@ import {
   getTasks,
 } from './modules/functions.js';
 
-// Add a task
 const form = document.querySelector('.list__add');
+const clearAllBtn = document.querySelector('.list__clear-btn');
 
+// Add a task
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const description = document.querySelector('.list__add-input');
@@ -40,8 +41,6 @@ taskContainer.addEventListener('change', (e) => {
 });
 
 // Clear all completed tasks
-const clearAllBtn = document.querySelector('.list__clear-btn');
-
 clearAllBtn.addEventListener('click', () => {
   const tasksArr = getTasks();
 
