@@ -12,7 +12,7 @@ export const getTasks = () => {
 };
 
 // Add a task to local storage
-export const storeTask = (tasks) => {
+export const UpdateTasks = (tasks) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
@@ -61,7 +61,7 @@ export const render = (tasks) => {
 export const addTask = (tasks, task) => {
   tasks.push(task);
 
-  storeTask(tasks);
+  UpdateTasks(tasks);
   render(tasks);
 };
 
@@ -78,7 +78,7 @@ export const removeTask = (tasks, target) => {
       task.index = i + 1;
     });
 
-    storeTask(tasks);
+    UpdateTasks(tasks);
     render(tasks);
   }
 };
@@ -89,7 +89,7 @@ export const editTask = (tasks, target) => {
 
     tasks[taskIndex].description = target.value;
 
-    storeTask(tasks);
+    UpdateTasks(tasks);
     render(tasks);
   }
 };
